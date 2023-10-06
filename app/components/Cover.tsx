@@ -1,4 +1,4 @@
-import { EnvelopeOpenIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import classNames from 'classnames'
 
 interface Props {
@@ -11,7 +11,7 @@ export const Cover = ({ onOpen, guestName, isOpened }: Props) => {
   return (
     <div
       className={classNames(
-        isOpened && 'opacity-0',
+        isOpened && 'opacity-0 z-0',
         'flex h-[100dvh] transition-all w-full z-10 absolute duration-500 text-slate-100 flex-col items-center justify-between py-16 px-12 bg-cover bg-center bg-no-repeat'
       )}
       style={{ backgroundImage: "url('/pine-forest.jpeg')" }}
@@ -26,11 +26,9 @@ export const Cover = ({ onOpen, guestName, isOpened }: Props) => {
       <div className="text-base md:text-lg text-center italic">
         <p>kepada</p>
         <p className="normal-case text-lg md:text-xl">{guestName}</p>
-        <button
-          onClick={onOpen}
-          className="italic mt-4 bg-slate-100 hover:bg-slate-300 rounded-md text-gray-800 text-sm px-4 py-1"
-        >
-          <EnvelopeOpenIcon className="h-4 w-4 inline" /> buka undangan
+        <button onClick={onOpen} className="italic mt-4 bg-slate-100 hover:bg-slate-300 rounded-md text-gray-900 px-4 py-2">
+          <EnvelopeIcon className="h-4 w-4 inline mr-2" />
+          buka undangan
         </button>
       </div>
     </div>
