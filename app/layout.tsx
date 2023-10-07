@@ -11,8 +11,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={imfell.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={imfell.className} suppressHydrationWarning={true}>
+        {children}
+      </body>
     </html>
   )
 }

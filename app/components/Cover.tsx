@@ -1,5 +1,6 @@
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import classNames from 'classnames'
+import { Button } from './Button'
 
 interface Props {
   onOpen: () => void
@@ -11,25 +12,25 @@ export const Cover = ({ onOpen, guestName, isOpened }: Props) => {
   return (
     <div
       className={classNames(
-        isOpened && 'opacity-0 z-0',
-        'flex h-[100dvh] transition-all w-full z-10 absolute duration-500 text-slate-100 flex-col items-center justify-between py-16 px-12 bg-cover bg-center bg-no-repeat'
+        isOpened && 'opacity-0 z-0 translate-y-[-100dvh]',
+        'flex h-[100dvh] transition-all w-full z-10 absolute duration-500 text-slate-50 flex-col items-center justify-between py-16 px-12 bg-cover bg-center bg-no-repeat'
       )}
       style={{ backgroundImage: "url('/pine-forest.jpeg')" }}
     >
-      <p className="text-xl md:text-2xl italic">the wedding of</p>
-      <div className="text-7xl italic text-center">
+      <p className="text-xl md:text-2xl">the wedding of</p>
+      <div className="text-7xl text-center">
         <p>rijal</p>
         <p>&</p>
         <p>nisa</p>
       </div>
 
-      <div className="text-base md:text-lg text-center italic">
+      <div className="text-base md:text-lg text-center">
         <p>kepada</p>
-        <p className="normal-case text-lg md:text-xl">{guestName}</p>
-        <button onClick={onOpen} className="italic mt-4 bg-slate-100 hover:bg-slate-300 rounded-md text-gray-900 px-4 py-2">
+        <p className="text-lg md:text-xl">{guestName}</p>
+        <Button onClick={onOpen}>
           <EnvelopeIcon className="h-4 w-4 inline mr-2" />
           buka undangan
-        </button>
+        </Button>
       </div>
     </div>
   )

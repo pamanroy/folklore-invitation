@@ -20,7 +20,7 @@ export const AudioPlayer: React.FC<Props> = ({ onClick, isPlaying }) => {
 
   return (
     <button
-      className="fixed right-2 bottom-4 w-5 h-5 rounded shadow bg-slate-100 box-border flex items-center justify-center"
+      className="fixed right-2 bottom-4 w-6 h-6 rounded shadow cursor-pointer bg-slate-900 box-border flex items-center justify-center"
       onClick={onClick}
     >
       {!isPlaying && (
@@ -30,7 +30,7 @@ export const AudioPlayer: React.FC<Props> = ({ onClick, isPlaying }) => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-4 h-4 text-slate-900"
+          className="w-4 h-4 text-slate-50"
         >
           <path
             strokeLinecap="round"
@@ -40,10 +40,11 @@ export const AudioPlayer: React.FC<Props> = ({ onClick, isPlaying }) => {
         </svg>
       )}
       {isPlaying && (
-        <div className="w-full h-full flex items-end p-1 gap-[1px]">
-          <div className="playing-bar playing-bar1 bg-slate-900"></div>
-          <div className="playing-bar playing-bar2 bg-slate-900"></div>
-          <div className="playing-bar playing-bar3 bg-slate-900"></div>
+        <div className="w-full h-full flex items-end justify-center p-1 gap-[2px]">
+          <div className="playing-bar playing-bar1 bg-slate-50"></div>
+          <div className="playing-bar playing-bar2 bg-slate-50"></div>
+          <div className="playing-bar playing-bar3 bg-slate-50"></div>
+          <div className="playing-bar playing-bar4 bg-slate-50"></div>
         </div>
       )}
     </button>

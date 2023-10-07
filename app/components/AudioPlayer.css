@@ -1,6 +1,6 @@
 .playing-bar {
   display: inline-block;
-  width: 3px;
+  width: 2px;
   height: 100%;
   animation: up-and-down 1.3s ease infinite alternate;
 }
@@ -17,6 +17,11 @@
 .playing-bar3 {
   height: 75%;
   animation-delay: -3.7s;
+}
+
+.playing-bar4 {
+  height: 40%;
+  animation-delay: -5s;
 }
 
 @keyframes up-and-down {
