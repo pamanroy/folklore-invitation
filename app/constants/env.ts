@@ -4,4 +4,5 @@ export const globalVar = {
   GROOM_FULLNAME: process.env.NEXT_PUBLIC_GROOM_FULLNAME || '',
   BRIDE_FULLNAME: process.env.NEXT_PUBLIC_BRIDE_FULLNAME || '',
   EVENT_DATE: process.env.NEXT_PUBLIC_EVENT_DATE || 0,
+  BASE_URL: process.env.NEXT_PUBLIC_BASE_URL || '',
 }

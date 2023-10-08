@@ -28,7 +28,7 @@ export const Cover = ({ onOpen, guestName, isOpened }: Props) => {
       <div className="text-base md:text-lg text-center">
         <p>kepada</p>
         <p className="text-lg md:text-xl">{guestName}</p>
-        <Button onClick={onOpen}>
+        <Button onClick={onOpen} className="mt-4">
           <EnvelopeIcon className="h-4 w-4 inline mr-2" />
           buka undangan
         </Button>
