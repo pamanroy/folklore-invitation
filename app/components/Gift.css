@@ -1,0 +1,6 @@
+.debit-card {
+  background-color: #f1f5f9;
+  background-image: radial-gradient(#0f172a61 0.45px, transparent 0.45px), radial-gradient(#0f172a61 0.45px, #f1f5f9 0.45px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+}

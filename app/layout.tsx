@@ -5,8 +5,8 @@ import { IM_Fell_DW_Pica } from 'next/font/google'
 const imfell = IM_Fell_DW_Pica({ style: ['italic', 'normal'], weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'The Wedding of Rijal and Nisa',
-  description: 'Rijal and Nisa is getting married!!!!',
+  title: 'The Wedding of Naruto and Hinata',
+  description: 'Naruto and Hinata is getting married!!!!',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

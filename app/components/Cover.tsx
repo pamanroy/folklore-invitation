@@ -19,9 +19,9 @@ export const Cover = ({ onOpen, guestName, isOpened }: Props) => {
     >
       <p className="text-xl md:text-2xl">the wedding of</p>
       <div className="text-7xl text-center">
-        <p>rijal</p>
+        <p>naruto</p>
         <p>&</p>
-        <p>nisa</p>
+        <p>hinata</p>
       </div>
 
       <div className="text-base md:text-lg text-center">
