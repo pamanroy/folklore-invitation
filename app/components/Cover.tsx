@@ -1,6 +1,7 @@
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import classNames from 'classnames'
 import { Button } from './Button'
+import { globalVar } from '../constants/env'
 
 interface Props {
   onOpen: () => void
@@ -19,9 +20,9 @@ export const Cover = ({ onOpen, guestName, isOpened }: Props) => {
     >
       <p className="text-xl md:text-2xl">the wedding of</p>
       <div className="text-7xl text-center">
-        <p>naruto</p>
+        <p>{globalVar.GROOM_NAME}</p>
         <p>&</p>
-        <p>hinata</p>
+        <p>{globalVar.BRIDE_NAME}</p>
       </div>
 
       <div className="text-base md:text-lg text-center">

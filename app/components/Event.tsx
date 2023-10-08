@@ -1,7 +1,9 @@
 import { CalendarDaysIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { PropsWithChildren, useEffect, useState } from 'react'
-import { Button } from './Button'
 import Link from 'next/link'
+import { globalVar } from '../constants/env'
+import dayjs from 'dayjs'
+import 'dayjs/locale/id'
 
 interface CountdownProps {
   days: number
@@ -70,7 +72,7 @@ export const Event = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime()
-      const eventDate = new Date('Mar 29, 2026 08:00:00').getTime()
+      const eventDate = new Date(globalVar.EVENT_DATE).getTime()
       const distance = eventDate - now
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
@@ -103,14 +105,14 @@ export const Event = () => {
       <div className="flex flex-wrap gap-4 md:gap-12 justify-center mt-6">
         <EventSchedule
           name="akad"
-          date="sabtu, 29 maret 2026"
+          date={dayjs(globalVar.EVENT_DATE).locale('id').format('dddd, DD MMMM YYYY')}
           time="08.00 - 09.00 wib"
           location="spotify camp nou, barcelona"
           url={LOCATION_URL}
         />
         <EventSchedule
           name="resepsi"
-          date="sabtu, 29 maret 2026"
+          date={dayjs(globalVar.EVENT_DATE).locale('id').format('dddd, DD MMMM YYYY')}
           time="10.00 - 11.30 wib"
           location="spotify camp nou, barcelona"
           url={LOCATION_URL}

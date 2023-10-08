@@ -1,3 +1,6 @@
+import { globalVar } from '../constants/env'
+import dayjs from 'dayjs'
+
 export const Hero = () => {
   return (
     <div
@@ -7,11 +10,11 @@ export const Hero = () => {
       <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-6 items-center">
         <p className="text-xl md:text-2xl">the wedding of</p>
         <div className="text-7xl text-center">
-          <p>naruto</p>
+          <p>{globalVar.GROOM_NAME}</p>
           <p>&</p>
-          <p>hinata</p>
+          <p>{globalVar.BRIDE_NAME}</p>
         </div>
-        <p className="text-xl md:text-2xl">29.03.2026</p>
+        <p className="text-xl md:text-2xl">{dayjs(globalVar.EVENT_DATE).format('DD.MM.YYYY')}</p>
       </div>
 
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-sm md:text-base text-center">

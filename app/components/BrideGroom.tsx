@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { globalVar } from '../constants/env'
 
 interface ProfileProps {
   src: string
@@ -24,10 +25,14 @@ export const BrideGroom = () => {
       <div className="flex flex-wrap justify-between gap-6">
         <Profile
           src="/man.webp"
-          name="naruto uzumaki"
+          name={globalVar.GROOM_FULLNAME}
           parents="putra tunggal dari bapak minato namikaze & ibu kushina uzumaki"
         />
-        <Profile src="/woman.webp" name="hinata hyuga" parents="putri tunggal dari bapak hiashi hyuga & ibu hanami hyuga" />
+        <Profile
+          src="/woman.webp"
+          name={globalVar.BRIDE_FULLNAME}
+          parents="putri tunggal dari bapak hiashi hyuga & ibu hanami hyuga"
+        />
       </div>
     </div>
   )

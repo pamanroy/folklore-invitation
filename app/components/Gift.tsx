@@ -3,14 +3,27 @@ import { Jura } from 'next/font/google'
 import './Gift.css'
 import classNames from 'classnames'
 import { Button } from './Button'
-import { ClipboardIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
+import { useEffect, useState } from 'react'
+import { globalVar } from '../constants/env'
 
 const jura = Jura({ weight: '400', style: ['normal'], subsets: ['latin'] })
 
 const DebitCard = ({ name, cardNumber, bankImage }: { name: string; cardNumber: string; bankImage: string }) => {
   const [isCopied, setIsCopied] = useState(false)
+
+  useEffect(() => {
+    if (!isCopied) return
+
+    const timeout = setTimeout(() => {
+      setIsCopied(false)
+    }, 1000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [isCopied])
+
   return (
     <div
       className={classNames(
@@ -30,8 +43,21 @@ const DebitCard = ({ name, cardNumber, bankImage }: { name: string; cardNumber: 
         <Button
           theme="dark"
           className="px-2 py-1 mt-0 flex gap-1 items-center rounded not-italic text-sm bg-slate-500 hover:bg-slate-700"
+          onClick={() => {
+            setIsCopied(true)
+            navigator.clipboard.writeText(cardNumber)
+          }}
         >
-          <ClipboardIcon className="w-4 h-4" /> Salin
+          {!isCopied && (
+            <>
+              <ClipboardIcon className="w-4 h-4" /> Salin
+            </>
+          )}
+          {isCopied && (
+            <>
+              <CheckIcon className="w-4 h-4" /> Berhasil disalin
+            </>
+          )}
         </Button>
       </div>
     </div>
@@ -46,8 +72,9 @@ export const Gift = () => {
         doa restu anda merupakan karunia yang sangat berarti bagi kami. jika memberi adalah ungkapan tanda kasih anda, anda
         dapat memberi kado secara cashless.
       </p>
-      <div className="flex flex-col items-center mt-2">
-        <DebitCard name="naruto uzumaki" cardNumber="1234567890" bankImage="/bsi.png" />
+      <div className="flex flex-wrap justify-center gap-6 items-center mt-2">
+        <DebitCard name={globalVar.GROOM_FULLNAME} cardNumber="1234567890" bankImage="/bsi.png" />
+        <DebitCard name={globalVar.BRIDE_FULLNAME} cardNumber="0123456789" bankImage="/bsi.png" />
       </div>
     </div>
   )
