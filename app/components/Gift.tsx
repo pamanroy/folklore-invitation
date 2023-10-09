@@ -3,7 +3,7 @@ import { Jura } from 'next/font/google'
 import './Gift.css'
 import classNames from 'classnames'
 import { Button } from './Button'
-import { CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, ClipboardIcon, GiftIcon } from '@heroicons/react/24/outline'
 import { useEffect, useState } from 'react'
 import { globalVar } from '../constants/env'
 
@@ -69,8 +69,7 @@ export const Gift = () => {
     <div className="w-full text-center">
       <p className="title mb-3">amplop digital</p>
       <p>
-        doa restu anda merupakan karunia yang sangat berarti bagi kami. jika memberi adalah ungkapan tanda kasih anda, anda
-        dapat memberi kado secara cashless.
+        bagi yang ingin memberikan hadiah untuk pernikahan kami, kami menerima secara cashless melalui rekening kami berikut
       </p>
       <div className="flex flex-wrap justify-center gap-6 items-center mt-2">
         <DebitCard name={globalVar.GROOM_FULLNAME} cardNumber="1234567890" bankImage="/bsi.png" />

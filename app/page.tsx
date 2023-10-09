@@ -8,6 +8,7 @@ import { BrideGroom } from './components/BrideGroom'
 import { Event } from './components/Event'
 import { Gift } from './components/Gift'
 import { Hero } from './components/Hero'
+import { Wish } from './components/Wish'
 
 export default function Home() {
   const search = useSearchParams()
@@ -33,6 +34,7 @@ export default function Home() {
             <BrideGroom />
             <Event />
             <Gift />
+            <Wish />
           </div>
         </>
       )}
