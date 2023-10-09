@@ -2,8 +2,10 @@ import { FormEvent, useState } from 'react'
 import { Input } from './Input'
 import { useSearchParams } from 'next/navigation'
 import { TextArea } from './TextArea'
+import { useEffect } from 'react'
 import { Select } from './Select'
 import { Button } from './Button'
+import axios from 'axios'
 
 export const Wish = () => {
   const search = useSearchParams()
@@ -13,8 +15,18 @@ export const Wish = () => {
 
   const submit = (event: FormEvent) => {
     event.preventDefault()
-    console.log('ajg')
   }
+
+  useEffect(() => {
+    axios
+      .get('/api/wishes')
+      .then((result) => {
+        console.log(result.data, 'ajg')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }, [])
 
   return (
     <div className="w-full">
