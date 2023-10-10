@@ -8,13 +8,19 @@ import { Button } from './Button'
 import axios from 'axios'
 import { useFetchDataSchema, useSimpleReducer } from '../hooks/data'
 import { CheckCircleIcon, QuestionMarkCircleIcon, XCircleIcon } from '@heroicons/react/24/outline'
+import dayjs from 'dayjs'
+import 'dayjs/locale/id'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
 interface WishData {
   attendance: string
   name: string
   message: string
   _id: string
+  createdAt: number
 }
+
+dayjs.extend(relativeTime)
 
 const getAttendanceIcon = (attendance: string) => {
   switch (attendance) {
@@ -89,10 +95,11 @@ export const Wish = () => {
     }
     return wishes.data.map((wish) => (
       <div key={wish._id} className="border-b border-slate-900 py-2">
-        <p className="font-semibold">
+        <p className="font-semibold mb-1">
           {wish.name} {getAttendanceIcon(wish.attendance)}
         </p>
-        <p className="whitespace-pre-wrap break-all">{wish.message}</p>
+        <p className="whitespace-pre-wrap break-all leading-4">{wish.message}</p>
+        <p className="text-sm text-slate-500">{dayjs(wish.createdAt).locale('id').fromNow()}</p>
       </div>
     ))
   }
@@ -137,6 +144,7 @@ export const Wish = () => {
         <Button theme="dark" disabled={submitProcess.isSubmitting} type="submit" className="mt-3 px-3 py-1">
           {submitProcess.isSubmitting ? 'mengirim...' : 'kirim'}
         </Button>
+        {submitProcess.error && <p>gagal mengirim pesan. coba lagi</p>}
       </form>
       <div className="max-w-lg mx-auto mt-8 normal-case max-h-80 overflow-y-scroll">{renderWishes()}</div>
     </div>

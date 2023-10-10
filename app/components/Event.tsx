@@ -107,14 +107,14 @@ export const Event = () => {
           name="akad"
           date={dayjs(globalVar.EVENT_DATE).locale('id').format('dddd, DD MMMM YYYY')}
           time="08.00 - 09.00 wib"
-          location="spotify camp nou, barcelona"
+          location="aula gedung hokage, konoha"
           url={LOCATION_URL}
         />
         <EventSchedule
           name="resepsi"
           date={dayjs(globalVar.EVENT_DATE).locale('id').format('dddd, DD MMMM YYYY')}
           time="10.00 - 11.30 wib"
-          location="spotify camp nou, barcelona"
+          location="ramen ichiraku, konoha"
           url={LOCATION_URL}
         />
       </div>

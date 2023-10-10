@@ -9,6 +9,8 @@ import { Event } from './components/Event'
 import { Gift } from './components/Gift'
 import { Hero } from './components/Hero'
 import { Wish } from './components/Wish'
+import { Gratitude } from './components/Gratitude'
+import { Footer } from './components/Footer'
 
 export default function Home() {
   const search = useSearchParams()
@@ -30,11 +32,13 @@ export default function Home() {
         <>
           <AudioPlayer isPlaying={isAudioPlaying} onClick={toggleAudio} />
           <Hero />
-          <div className="p-8 flex flex-col gap-16 lg:gap-24 content">
+          <div className="p-8 pb-2 flex flex-col gap-16 lg:gap-24 content">
             <BrideGroom />
             <Event />
             <Gift />
             <Wish />
+            <Gratitude />
+            <Footer />
           </div>
         </>
       )}
