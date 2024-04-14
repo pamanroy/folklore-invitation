@@ -9,12 +9,7 @@ export const Footer = () => {
           simple line
         </Link>
       </p>
-      <p>
-        website by{' '}
-        <Link href="https://github.com/rayhannr" target="_blank" className="underline">
-          rayhannr
-        </Link>
-      </p>
+      <p>website by uncle roy</p>
     </footer>
   )
 }
