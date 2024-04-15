@@ -31,7 +31,7 @@ export const BrideGroom = () => {
         <Profile
           src="/woman.webp"
           name={globalVar.BRIDE_FULLNAME}
-          parents="putri tunggal dari bapak hiashi hyuga & ibu hanami hyuga"
+          parents="putri pertama dari bapak hiashi hyuga & ibu hanami hyuga"
         />
       </div>
     </div>

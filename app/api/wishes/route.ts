@@ -38,6 +38,6 @@ export async function POST(request: Request) {
     payload._id = result.insertedId
     return Response.json(payload, { status: 201 })
   } catch (error) {
-    return Response.json({ message: 'failed to submit your fucking wish' }, { status: 500 })
+    return Response.json({ message: 'failed to submit your wish' }, { status: 500 })
   }
 }
